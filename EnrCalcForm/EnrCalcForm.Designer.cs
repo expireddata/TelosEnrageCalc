@@ -1,6 +1,6 @@
 ﻿namespace EnrCalcForm
 {
-    partial class Form1
+    partial class EnrCalcForm
     {
         /// <summary>
         /// Required designer variable.

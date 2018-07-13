@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace EnrCalcForm
 {
-    public partial class Form1 : Form
+    public partial class EnrCalcForm : Form
     {
         public Random r = new Random();
         public static int NumberOfTrials = 20;
-        public Form1()
+        public EnrCalcForm()
         {
             InitializeComponent();
         }
