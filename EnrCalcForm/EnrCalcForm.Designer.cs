@@ -38,6 +38,7 @@
             this.startingEnrLabel = new System.Windows.Forms.Label();
             this.startingEnrTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.perHour = new System.Windows.Forms.RadioButton();
             this.perStreakRadioBtn = new System.Windows.Forms.RadioButton();
             this.perKillAvgButton = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,13 +49,16 @@
             this.dormantResultBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.orbResultBox = new System.Windows.Forms.TextBox();
-            this.perHour = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.startStreak = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.startStreak);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.avgTimeBox);
             this.groupBox1.Controls.Add(this.LOTD);
@@ -66,7 +70,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(302, 179);
+            this.groupBox1.Size = new System.Drawing.Size(302, 216);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parameters";
@@ -74,7 +78,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 46);
+            this.label5.Location = new System.Drawing.Point(25, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 0;
@@ -91,54 +95,54 @@
             // LOTD
             // 
             this.LOTD.AutoSize = true;
-            this.LOTD.Location = new System.Drawing.Point(94, 127);
+            this.LOTD.Location = new System.Drawing.Point(93, 149);
             this.LOTD.Name = "LOTD";
             this.LOTD.Size = new System.Drawing.Size(123, 17);
-            this.LOTD.TabIndex = 6;
+            this.LOTD.TabIndex = 8;
             this.LOTD.Text = "Luck of the dwarves";
             this.LOTD.UseVisualStyleBackColor = true;
             // 
             // endingEnrLabel
             // 
             this.endingEnrLabel.AutoSize = true;
-            this.endingEnrLabel.Location = new System.Drawing.Point(25, 98);
+            this.endingEnrLabel.Location = new System.Drawing.Point(25, 127);
             this.endingEnrLabel.Name = "endingEnrLabel";
             this.endingEnrLabel.Size = new System.Drawing.Size(59, 13);
-            this.endingEnrLabel.TabIndex = 4;
+            this.endingEnrLabel.TabIndex = 6;
             this.endingEnrLabel.Text = "Ending Enr";
             // 
             // endingEnrTextBox
             // 
-            this.endingEnrTextBox.Location = new System.Drawing.Point(113, 98);
+            this.endingEnrTextBox.Location = new System.Drawing.Point(113, 123);
             this.endingEnrTextBox.Name = "endingEnrTextBox";
             this.endingEnrTextBox.Size = new System.Drawing.Size(120, 20);
-            this.endingEnrTextBox.TabIndex = 5;
+            this.endingEnrTextBox.TabIndex = 7;
             // 
             // calcButton
             // 
-            this.calcButton.Location = new System.Drawing.Point(97, 150);
+            this.calcButton.Location = new System.Drawing.Point(96, 172);
             this.calcButton.Name = "calcButton";
             this.calcButton.Size = new System.Drawing.Size(75, 23);
-            this.calcButton.TabIndex = 7;
-            this.calcButton.Text = "Calculate";
+            this.calcButton.TabIndex = 9;
+            this.calcButton.Text = "&Calculate";
             this.calcButton.UseVisualStyleBackColor = true;
             this.calcButton.Click += new System.EventHandler(this.calcButton_Click);
             // 
             // startingEnrLabel
             // 
             this.startingEnrLabel.AutoSize = true;
-            this.startingEnrLabel.Location = new System.Drawing.Point(25, 75);
+            this.startingEnrLabel.Location = new System.Drawing.Point(25, 101);
             this.startingEnrLabel.Name = "startingEnrLabel";
             this.startingEnrLabel.Size = new System.Drawing.Size(62, 13);
-            this.startingEnrLabel.TabIndex = 2;
+            this.startingEnrLabel.TabIndex = 4;
             this.startingEnrLabel.Text = "Starting Enr";
             // 
             // startingEnrTextBox
             // 
-            this.startingEnrTextBox.Location = new System.Drawing.Point(113, 72);
+            this.startingEnrTextBox.Location = new System.Drawing.Point(113, 97);
             this.startingEnrTextBox.Name = "startingEnrTextBox";
             this.startingEnrTextBox.Size = new System.Drawing.Size(120, 20);
-            this.startingEnrTextBox.TabIndex = 3;
+            this.startingEnrTextBox.TabIndex = 5;
             // 
             // groupBox2
             // 
@@ -154,12 +158,24 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.orbResultBox);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 184);
+            this.groupBox2.Location = new System.Drawing.Point(0, 221);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(302, 145);
+            this.groupBox2.Size = new System.Drawing.Size(302, 172);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Drop Chance";
+            // 
+            // perHour
+            // 
+            this.perHour.AutoSize = true;
+            this.perHour.Location = new System.Drawing.Point(207, 19);
+            this.perHour.Name = "perHour";
+            this.perHour.Size = new System.Drawing.Size(67, 17);
+            this.perHour.TabIndex = 2;
+            this.perHour.TabStop = true;
+            this.perHour.Text = "Per Hour";
+            this.perHour.UseVisualStyleBackColor = true;
+            this.perHour.CheckedChanged += new System.EventHandler(this.perHour_CheckedChanged);
             // 
             // perStreakRadioBtn
             // 
@@ -186,7 +202,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 116);
+            this.label3.Location = new System.Drawing.Point(26, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 9;
@@ -195,16 +211,17 @@
             // specificDormantResultBox
             // 
             this.specificDormantResultBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.specificDormantResultBox.Location = new System.Drawing.Point(132, 116);
+            this.specificDormantResultBox.Location = new System.Drawing.Point(133, 127);
             this.specificDormantResultBox.Name = "specificDormantResultBox";
             this.specificDormantResultBox.ReadOnly = true;
             this.specificDormantResultBox.Size = new System.Drawing.Size(100, 13);
             this.specificDormantResultBox.TabIndex = 10;
+            this.specificDormantResultBox.TabStop = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 40);
+            this.label4.Location = new System.Drawing.Point(26, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 3;
@@ -214,16 +231,17 @@
             // 
             this.resultBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.resultBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.resultBox.Location = new System.Drawing.Point(132, 40);
+            this.resultBox.Location = new System.Drawing.Point(133, 51);
             this.resultBox.Name = "resultBox";
             this.resultBox.ReadOnly = true;
             this.resultBox.Size = new System.Drawing.Size(100, 13);
             this.resultBox.TabIndex = 4;
+            this.resultBox.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 90);
+            this.label2.Location = new System.Drawing.Point(26, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 7;
@@ -232,16 +250,17 @@
             // dormantResultBox
             // 
             this.dormantResultBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dormantResultBox.Location = new System.Drawing.Point(132, 90);
+            this.dormantResultBox.Location = new System.Drawing.Point(133, 101);
             this.dormantResultBox.Name = "dormantResultBox";
             this.dormantResultBox.ReadOnly = true;
             this.dormantResultBox.Size = new System.Drawing.Size(100, 13);
             this.dormantResultBox.TabIndex = 8;
+            this.dormantResultBox.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 64);
+            this.label1.Location = new System.Drawing.Point(26, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 13);
             this.label1.TabIndex = 5;
@@ -250,29 +269,34 @@
             // orbResultBox
             // 
             this.orbResultBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.orbResultBox.Location = new System.Drawing.Point(132, 64);
+            this.orbResultBox.Location = new System.Drawing.Point(133, 75);
             this.orbResultBox.Name = "orbResultBox";
             this.orbResultBox.ReadOnly = true;
             this.orbResultBox.Size = new System.Drawing.Size(100, 13);
             this.orbResultBox.TabIndex = 6;
+            this.orbResultBox.TabStop = false;
             // 
-            // perHour
+            // label6
             // 
-            this.perHour.AutoSize = true;
-            this.perHour.Location = new System.Drawing.Point(207, 19);
-            this.perHour.Name = "perHour";
-            this.perHour.Size = new System.Drawing.Size(67, 17);
-            this.perHour.TabIndex = 2;
-            this.perHour.TabStop = true;
-            this.perHour.Text = "Per Hour";
-            this.perHour.UseVisualStyleBackColor = true;
-            this.perHour.CheckedChanged += new System.EventHandler(this.perHour_CheckedChanged);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 76);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Starting Streak";
+            // 
+            // startStreak
+            // 
+            this.startStreak.Location = new System.Drawing.Point(113, 72);
+            this.startStreak.Name = "startStreak";
+            this.startStreak.Size = new System.Drawing.Size(120, 20);
+            this.startStreak.TabIndex = 3;
             // 
             // EnrCalcForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 329);
+            this.ClientSize = new System.Drawing.Size(302, 393);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "EnrCalcForm";
@@ -309,6 +333,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox avgTimeBox;
         private System.Windows.Forms.RadioButton perHour;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox startStreak;
     }
 }
 

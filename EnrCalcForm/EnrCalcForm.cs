@@ -13,10 +13,11 @@ namespace EnrCalcForm
     public partial class EnrCalcForm : Form
     {
         public Random r = new Random();
-        public static int NumberOfTrials = 1000;
+        public static int NumberOfTrials = 10000;
         public EnrCalcForm()
         {
             InitializeComponent();
+            perKillAvgButton.Checked = true; 
         }
 
         private void calcButton_Click(object sender, EventArgs e)
@@ -34,11 +35,16 @@ namespace EnrCalcForm
             }
             double sumP = 0;
             double sumStreak = 0;
+            int initStreak = 0;
+            if (!string.IsNullOrEmpty(this.startStreak.Text))
+            {
+                int.TryParse(this.startStreak.Text, out initStreak);
+            }
             for (int trialNum = 0; trialNum < NumberOfTrials; trialNum++)
             {
                 double p = 1;
-                int streak = 0; 
-                for (int curEnr = startEnr; curEnr <= endEnr; curEnr += r.Next(5, 21))
+                int streak = initStreak; 
+                for (int curEnr = startEnr; curEnr <= endEnr; curEnr += randomRoll())
                 {
                     double divisor = 10000 / (10 + 0.25 * (curEnr + (this.LOTD.Checked ? 25 : 0)) + 3*streak++);
                     if(curEnr < 100)
@@ -53,7 +59,7 @@ namespace EnrCalcForm
                     p *= killP; 
                 }
                 sumP += p;
-                sumStreak += streak + 1;
+                sumStreak += (streak - initStreak) + 1;
             }
             double avgKills = sumStreak / NumberOfTrials;
             double kph = (60 / avgTime);
@@ -79,6 +85,65 @@ namespace EnrCalcForm
         private void perHour_CheckedChanged(object sender, EventArgs e)
         {
             avgTimeBox.Enabled = perHour.Checked;
+        }
+
+        private int randomRoll()
+        {
+            double roll = r.NextDouble();
+
+            if(roll <= 0.012)
+            {
+                return 5; 
+            }
+            if(roll <= 0.104)
+            {
+                return 8; 
+            }
+            if(roll <= 0.226)
+            {
+                return 9; 
+            }
+            if(roll <= 0.474)
+            {
+                return 10; 
+            }
+            if(roll <= 0.623)
+            {
+                return 11; 
+            }
+            if(roll <= 0.72)
+            {
+                return 12; 
+            }
+            if(roll <= 0.805)
+            {
+                return 13;
+            }
+            if(roll <= 0.867)
+            {
+                return 14; 
+            }
+            if(roll <= 0.915)
+            {
+                return 15; 
+            }
+            if(roll <= 0.942)
+            {
+                return 16;
+            }
+            if(roll <= 0.960)
+            {
+                return 17; 
+            }
+            if(roll <= 0.977)
+            {
+                return 18; 
+            }
+            if(roll <= 0.99)
+            {
+                return 19; 
+            }
+            return 20;
         }
     }
 }
